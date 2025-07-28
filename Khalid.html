@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title> Khalid  Portfolio </title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<header>
+<nav class="container">
+<a class="logo" data-ar="المعرض" data-en="Portfolio" href="#">
+<i class="fas fa-briefcase"></i> Portfolio
+        </a>
+<ul class="nav-links">
+<li>
+<a data-ar="الرئيسية" data-en="Home" href="#" onclick="showSection('home')">
+<i class="fas fa-house"></i> <span>Home</span>
+</a>
+</li>
+<li>
+<a data-ar="عني" data-en="About" href="#" onclick="showSection('about')">
+<i class="fas fa-user"></i> <span>About</span>
+</a>
+</li>
+<li>
+<a data-ar="الخدمات" data-en="Services" href="#" onclick="showSection('services')">
+<i class="fas fa-cogs"></i> <span>Services</span>
+</a>
+</li>
+<li>
+<a data-ar="الشهادات" data-en="Certifications" href="#" onclick="showSection('certifications')">
+<i class="fas fa-certificate"></i> <span>Certifications</span>
+</a>
+</li>
+<li>
+<a data-ar="التواصل" data-en="Contact" href="#" onclick="showSection('contact')">
+<i class="fas fa-envelope"></i> <span>Contact</span>
+</a>
+</li>
+</ul>
+<button class="lang-switch" onclick="toggleLanguage()">العربية</button>
+<button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
+</nav>
+</header>
+<main>
+<!-- Home Section -->
+<section class="section active" id="home">
+<div class="container">
+<div class="hero">
+<div class="hero-content">
+<h1 data-ar="مرحباً، أنا خالد غيث " data-en="Hello, I'm Khalid Ghaith">Hello, I'm Khalid Ghaith</h1>
+<p class="subtitle" data-ar="مبدع محترف ومبتكر رقمي" data-en="Creative Professional &amp; Digital Innovator">Creative Professional &amp; Digital Innovator</p>
+<p class="description" data-ar="أقوم بإنشاء تجارب رقمية استثنائية من خلال التصميم المبتكر والتكنولوجيا المتطورة. بشغف للإبداع وحل المشاكل، أساعد العلامات التجارية والشركات في سرد قصصهم في العالم الرقمي." data-en="I create exceptional digital experiences through innovative design and cutting-edge technology. With a passion for creativity and problem-solving, I help brands and businesses tell their stories in the digital world.">I create exceptional digital experiences through innovative design and cutting-edge technology. With a passion for creativity and problem-solving, I help brands and businesses tell their stories in the digital world.</p>
+</div>
+<div class="hero-image">
+<img alt="Profile" class="profile-image" src="khalid image (2).jpeg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="section" id="about">
+<div class="container">
+<h2 class="section-title" data-ar="عني" data-en="About Me">About Me</h2>
+<div class="about-content">
+<div class="about-text">
+<p data-ar="أنا مبدع محترف شغوف  في التصميم والتطوير الرقمي. بدأت رحلتي بحب للسرد البصري وتطورت إلى مجموعة مهارات شاملة تمتد عبر تخصصات متعددة." data-en="I'm a passionate creative professional in digital design and development. My journey began with a love for visual storytelling and has evolved into a comprehensive skill set that spans multiple disciplines.">I'm a passionate creative professional  in digital design and development. My journey began with a love for visual storytelling and has evolved into a comprehensive skill set that spans multiple disciplines.</p>
+<p data-ar="أؤمن بقوة التصميم الجيد في حل المشاكل وإنشاء روابط مفيدة بين العلامات التجارية وجمهورها. كل مشروع أعمل عليه هو فرصة لدفع الحدود الإبداعية وتقديم نتائج استثنائية." data-en="I believe in the power of good design to solve problems and create meaningful connections between brands and their audiences. Every project I work on is an opportunity to push creative boundaries and deliver exceptional results.">I believe in the power of good design to solve problems and create meaningful connections between brands and their audiences. Every project I work on is an opportunity to push creative boundaries and deliver exceptional results.</p>
+</div>
+<div class="skills-grid">
+<div class="skill-card">
+<div class="skill-icon">🎨</div>
+<h3 data-ar="التصميم" data-en="Design">Design</h3>
+<p data-ar="تصميم واجهات المستخدم، العلامات التجارية، الهوية البصرية" data-en="UI/UX Design, Branding, Visual Identity">UI/UX Design, Branding, Visual Identity</p>
+</div>
+<div class="skill-card">
+<div class="skill-icon">💻</div>
+<h3 data-ar="التطوير" data-en="Development">Development</h3>
+<p data-ar="تطوير الواجهات الأمامية، التصميم المتجاوب" data-en="Frontend Development, Responsive Design">Frontend Development, Responsive Design</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="section" id="services">
+<div class="container">
+<h2 class="section-title" data-ar="الخدمات التي أقدمها" data-en="Services I Offer">Services I Offer</h2>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-icon">🎨</div>
+<h3 data-ar="تصميم واجهات المستخدم" data-en="UI/UX Design">UI/UX Design</h3>
+<p data-ar="إنشاء واجهات مستخدم بديهية وجذابة توفر تجارب مستخدم استثنائية عبر جميع المنصات." data-en="Creating intuitive and engaging user interfaces that provide exceptional user experiences across all platforms.">Creating intuitive and engaging user interfaces that provide exceptional user experiences across all platforms.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">💻</div>
+<h3 data-ar="تطوير الويب" data-en="Web Development">Web Development</h3>
+<p data-ar="بناء تطبيقات ويب متجاوبة وسريعة وقابلة للتوسع باستخدام التقنيات الحديثة وأفضل الممارسات." data-en="Building responsive, fast, and scalable web applications using modern technologies and best practices.">Building responsive, fast, and scalable web applications using modern technologies and best practices.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">📱</div>
+<h3 data-ar="تصميم تطبيقات الهاتف المحمول" data-en="Mobile App Design">Mobile App Design</h3>
+<p data-ar="تصميم تطبيقات الهاتف المحمول الجميلة والوظيفية التي تعمل بسلاسة عبر منصات iOS و Android." data-en="Designing beautiful and functional mobile applications that work seamlessly across iOS and Android platforms.">Designing beautiful and functional mobile applications that work seamlessly across iOS and Android platforms.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">🚀</div>
+<h3 data-ar="الإستراتيجية الرقمية" data-en="Digital Strategy">Digital Strategy</h3>
+<p data-ar="تطوير استراتيجيات رقمية شاملة تتماشى مع أهداف الأعمال وتحقق نتائج قابلة للقياس." data-en="Developing comprehensive digital strategies that align with business goals and drive measurable results.">Developing comprehensive digital strategies that align with business goals and drive measurable results.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Certifications Section -->
+<section class="section" id="certifications">
+<div class="container">
+<h2 class="section-title" data-ar="الشهادات والخبرة" data-en="Certifications &amp; Experience">Certifications &amp; Experience</h2>
+<div class="cert-grid">
+<div class="cert-item">
+<h3 data-ar="شهادة جوجل لتصميم تجربة المستخدم" data-en="Google UX Design Certificate">Google UX Design Certificate</h3>
+<p class="institution" data-ar="شهادات جوجل المهنية" data-en="Google Career Certificates">Google Career Certificates</p>
+<p class="date" data-ar="2023" data-en="2023">2023</p>
+</div>
+<div class="cert-item">
+<h3 data-ar="مصمم واجهات مستخدم أول" data-en="Senior UI/UX Designer">Senior UI/UX Designer</h3>
+<p class="institution" data-ar="وكالة رقمية XYZ" data-en="Digital Agency XYZ">Digital Agency XYZ</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="section" id="contact">
+<div class="container">
+<h2 class="section-title" data-ar="تواصل معي" data-en="Get In Touch">Get In Touch</h2>
+<div class="contact-content">
+<div class="contact-text">
+<p data-ar="مستعد لتحويل أفكارك إلى واقع؟ أنا هنا لمساعدتك في إنشاء شيء مذهل. سواء كان لديك مشروع في ذهنك أو تريد فقط أن تقول مرحباً، أحب أن أسمع منك." data-en="Ready to bring your ideas to life? I'm here to help you create something amazing. Whether you have a project in mind or just want to say hello, I'd love to hear from you.">Ready to bring your ideas to life? I'm here to help you create something amazing. Whether you have a project in mind or just want to say hello, I'd love to hear from you.</p>
+</div>
+<div class="contact-grid">
+<div class="contact-info">
+<div class="contact-item">
+<div class="contact-icon">📧</div>
+<h3 data-ar="البريد الإلكتروني" data-en="Email">Email</h3>
+<p><a href="mailto:khalid.ghaith02@gmail.com" style="position: relative; z-index: 2;">khalid.ghaith02@email.com</a></p>
+</div>
+<div class="contact-item">
+<div class="contact-icon">📱</div>
+<h3 data-ar="الهاتف" data-en="Phone">Phone</h3>
+<p><a href="tel:+966500069692" style="position: relative; z-index: 2;">+966 500069692</a></p>
+</div>
+<div class="contact-item">
+<div class="contact-icon">📍</div>
+<h3 data-ar="الموقع" data-en="Location">Location</h3>
+<p data-ar="الرياض، المملكة العربية السعودية" data-en="Jeddah, Saudi Arabia">Jeddah, Saudi Arabia</p>
+</div>
+<div class="contact-item">
+<div class="contact-icon">💼</div>
+<h3 data-ar="لينكد إن" data-en="LinkedIn">LinkedIn</h3>
+<p><a href="https://www.linkedin.com/in/khalidghaith-" style="position: relative; z-index: 2;" target="_blank">https://www.linkedin.com/in/khalidghaith</a></p>
+</div>
+</div>
+<div class="contact-form">
+<form id="contactForm">
+<div class="form-group">
+<label data-ar="اسمك" data-en="Your Name" for="name">Your Name</label>
+<input id="name" name="name" required="" type="text"/>
+</div>
+<div class="form-group">
+<label data-ar="بريدك الإلكتروني" data-en="Your Email" for="email">Your Email</label>
+<input id="email" name="email" required="" type="email"/>
+</div>
+<div class="form-group">
+<label data-ar="الموضوع" data-en="Subject" for="subject">Subject</label>
+<input id="subject" name="subject" required="" type="text"/>
+</div>
+<div class="form-group">
+<label data-ar="رسالتك" data-en="Your Message" for="message">Your Message</label>
+<textarea id="message" name="message" required="" rows="5"></textarea>
+</div>
+<button class="submit-btn" data-ar="إرسال الرسالة" data-en="Send Message" type="submit">Send Message</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<script src="script.js"></script>
+</main></body>
+</html>
