@@ -131,15 +131,6 @@ function showSection(sectionId) {
     document.getElementById(sectionId).classList.add('active');
 }
 
-// تبديل القائمة في الهاتف
-function toggleMobileMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    
-    navLinks.classList.toggle('active');
-    mobileMenu.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
-}
-
 // تبديل اللغة
 function toggleLanguage() {
     currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
