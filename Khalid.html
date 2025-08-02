@@ -11,14 +11,14 @@
  <body>
   <header>
    <nav class="container">
-    <a class="logo" data-ar="المعرض" data-egn="Portfolio" href="#">
+    <a class="logo" data-ar="المعرض" data-en="Portfolio" href="#">
      <i class="fas fa-briefcase">
      </i>
      Portfolio
     </a>
     <ul class="nav-links">
      <li>
-      <a data-ar="الرئيسية" data-en="Home" href="#" onclick="showSection('home')">
+      <a data-ar="الرئيسية" data-en="Home" href="#" onclick="event.preventDefault();showSection('home')">
        <i class="fas fa-house">
        </i>
        <span>
@@ -27,7 +27,7 @@
       </a>
      </li>
      <li>
-      <a data-ar="عني" data-en="About" href="#" onclick="showSection('about')">
+      <a data-ar="عني" data-en="About" href="#" onclick="event.preventDefault(); showSection('about')">
        <i class="fas fa-user">
        </i>
        <span>
@@ -36,7 +36,7 @@
       </a>
      </li>
      <li>
-      <a data-ar="الخدمات" data-en="Services" href="#" onclick="showSection('services')">
+      <a data-ar="الخدمات" data-en="Services" href="#" onclick="event.preventDefault();  showSection('services')">
        <i class="fas fa-cogs">
        </i>
        <span>
@@ -45,7 +45,7 @@
       </a>
      </li>
      <li>
-      <a data-ar="الشهادات" data-en="Certifications" href="#" onclick="showSection('certifications')">
+      <a data-ar="الشهادات" data-en="Certifications" href="#" onclick="event.preventDefault();   showSection('certifications')">
        <i class="fas fa-certificate">
        </i>
        <span>
@@ -54,7 +54,7 @@
       </a>
      </li>
      <li>
-      <a data-ar="التواصل" data-en="Contact" href="#" onclick="showSection('contact')">
+      <a data-ar="التواصل" data-en="Contact" href="#" onclick="event.preventDefault();   showSection('contact')">
        <i class="fas fa-envelope">
        </i>
        <span>
