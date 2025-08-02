@@ -1,18 +1,23 @@
 // اللغة الحالية
 let currentLanguage = 'en';
 
-// عند تحميل الصفحة
-document.addEventListener('DOMContentLoaded', function () {
-    // استرجاع آخر قسم تم عرضه من التخزين
-    const lastSection = localStorage.getItem('lastSection') || 'home';
-    showSection(lastSection);
+/// عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', function() {
+    const savedSection = localStorage.getItem('currentSection');
+    if (savedSection) {
+        showSection(savedSection);
+    } else {
+        showSection('home');
+        localStorage.setItem('currentSection', 'home');
+    }
+});
+
 
     // استرجاع اللغة
     if (localStorage.getItem('lang')) {
         currentLanguage = localStorage.getItem('lang');
         applyLanguage();
-    }
-});
+    };
 
 // عرض القسم المطلوب وتخزينه
 function showSection(sectionId) {
@@ -23,7 +28,7 @@ function showSection(sectionId) {
     const target = document.getElementById(sectionId);
     if (target) {
         target.classList.add('active');
-        localStorage.setItem('lastSection', sectionId); // حفظ القسم
+        localStorage.setItem('currentSection', sectionId); // حفظ القسم
     }
 }
 
@@ -115,4 +120,36 @@ document.addEventListener('click', function (e) {
         !mobileMenu.contains(e.target)) {
         toggleMobileMenu();
     }
+});
+// Mobile menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-links a');
+    
+    // Toggle mobile menu
+    if (mobileMenu) {
+        mobileMenu.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+    }
+    
+    // Close mobile menu when clicking on a nav link
+    navItems.forEach(link => {
+        link.addEventListener('click', function() {
+            navLinks.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        });
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInsideNav = navLinks.contains(event.target) || mobileMenu.contains(event.target);
+        
+        if (!isClickInsideNav && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        }
+    });
 });
