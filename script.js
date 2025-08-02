@@ -152,4 +152,62 @@ document.addEventListener('DOMContentLoaded', function() {
             mobileMenu.classList.remove('active');
         }
     });
+    // Mobile menu functionality
+function toggleMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.mobile-overlay');
+    
+    navLinks.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    
+    if (overlay) {
+        overlay.classList.toggle('active');
+    }
+}
+
+// Auto-close mobile menu when clicking on navigation links
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const navLinksContainer = document.querySelector('.nav-links');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.mobile-overlay');
+    
+    // Close mobile menu when clicking on any nav link
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (navLinksContainer.classList.contains('active')) {
+                navLinksContainer.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                if (overlay) {
+                    overlay.classList.remove('active');
+                }
+            }
+        });
+    });
+    
+    // Close mobile menu when clicking on overlay
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            navLinksContainer.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const nav = document.querySelector('nav');
+        const isClickInsideNav = nav.contains(event.target);
+        
+        if (!isClickInsideNav && navLinksContainer.classList.contains('active')) {
+            navLinksContainer.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            if (overlay) {
+                overlay.classList.remove('active');
+            }
+        }
+    });
+});
+
 });
