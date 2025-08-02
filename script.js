@@ -12,12 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-
-    // استرجاع اللغة
-    if (localStorage.getItem('lang')) {
-        currentLanguage = localStorage.getItem('lang');
-        applyLanguage();
-    };
+// استرجاع اللغة
+if (localStorage.getItem('lang')) {
+    currentLanguage = localStorage.getItem('lang');
+    applyLanguage();
+};
 
 // عرض القسم المطلوب وتخزينه
 function showSection(sectionId) {
@@ -36,9 +35,18 @@ function showSection(sectionId) {
 function toggleMobileMenu() {
     const navLinks = document.querySelector('.nav-links');
     const mobileMenu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.mobile-overlay');
 
     navLinks.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    
+    // Toggle mobile menu icon
     mobileMenu.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+    
+    // Toggle overlay
+    if (overlay) {
+        overlay.classList.toggle('active');
+    }
 }
 
 // تبديل اللغة
@@ -114,71 +122,34 @@ document.getElementById('contactForm')?.addEventListener('input', function (e) {
 document.addEventListener('click', function (e) {
     const navLinks = document.querySelector('.nav-links');
     const mobileMenu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.mobile-overlay');
 
     if (navLinks?.classList.contains('active') &&
         !navLinks.contains(e.target) &&
         !mobileMenu.contains(e.target)) {
-        toggleMobileMenu();
+        navLinks.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        mobileMenu.textContent = '☰';
+        if (overlay) {
+            overlay.classList.remove('active');
+        }
     }
 });
+
 // Mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenu = document.querySelector('.mobile-menu');
     const navLinks = document.querySelector('.nav-links');
     const navItems = document.querySelectorAll('.nav-links a');
-    
-    // Toggle mobile menu
-    if (mobileMenu) {
-        mobileMenu.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-    }
-    
-    // Close mobile menu when clicking on a nav link
-    navItems.forEach(link => {
-        link.addEventListener('click', function() {
-            navLinks.classList.remove('active');
-            mobileMenu.classList.remove('active');
-        });
-    });
-    
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-        const isClickInsideNav = navLinks.contains(event.target) || mobileMenu.contains(event.target);
-        
-        if (!isClickInsideNav && navLinks.classList.contains('active')) {
-            navLinks.classList.remove('active');
-            mobileMenu.classList.remove('active');
-        }
-    });
-    // Mobile menu functionality
-function toggleMobileMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const overlay = document.querySelector('.mobile-overlay');
-    
-    navLinks.classList.toggle('active');
-    mobileMenu.classList.toggle('active');
-    
-    if (overlay) {
-        overlay.classList.toggle('active');
-    }
-}
-
-// Auto-close mobile menu when clicking on navigation links
-document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const navLinksContainer = document.querySelector('.nav-links');
-    const mobileMenu = document.querySelector('.mobile-menu');
     const overlay = document.querySelector('.mobile-overlay');
     
     // Close mobile menu when clicking on any nav link
-    navLinks.forEach(link => {
+    navItems.forEach(link => {
         link.addEventListener('click', function() {
-            if (navLinksContainer.classList.contains('active')) {
-                navLinksContainer.classList.remove('active');
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
                 mobileMenu.classList.remove('active');
+                mobileMenu.textContent = '☰';
                 if (overlay) {
                     overlay.classList.remove('active');
                 }
@@ -189,25 +160,25 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close mobile menu when clicking on overlay
     if (overlay) {
         overlay.addEventListener('click', function() {
-            navLinksContainer.classList.remove('active');
+            navLinks.classList.remove('active');
             mobileMenu.classList.remove('active');
+            mobileMenu.textContent = '☰';
             overlay.classList.remove('active');
         });
     }
     
-    // Close mobile menu when clicking outside
+    // Close mobile menu when clicking outside navigation area
     document.addEventListener('click', function(event) {
         const nav = document.querySelector('nav');
         const isClickInsideNav = nav.contains(event.target);
         
-        if (!isClickInsideNav && navLinksContainer.classList.contains('active')) {
-            navLinksContainer.classList.remove('active');
+        if (!isClickInsideNav && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
             mobileMenu.classList.remove('active');
+            mobileMenu.textContent = '☰';
             if (overlay) {
                 overlay.classList.remove('active');
             }
         }
     });
-});
-
 });
